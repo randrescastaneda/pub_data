@@ -23,5 +23,10 @@ wdi <- wbstats::wb_data(indicators,
   fs::path("wdi_in1", ext = "Rds") |>
   readr::write_rds(wdi, file = _)
 
-wdi <-
+
+# Test it is workinf
+wdi2 <-
   readr::read_rds("https://github.com/randrescastaneda/pub_data/raw/master/data/Rtest1/wdi_in1.Rds")
+
+
+waldo::compare(wdi, wdi2)
