@@ -2,7 +2,7 @@ library(fastverse)
 
 indicators <- c("lifeex" = "SP.DYN.LE00.IN",
                 "gini"   = "SI.POV.GINI",
-                "gdp_pc" = "NY.GDP.PCAP.PP.KD",
+                "gdp"    = "NY.GDP.MKTP.PP.KD",
                 "pop"    = "SP.POP.TOTL",
                 "pov_ofcl" = "1.0.HCount.Ofcl",
                 "pov_intl" = "SI.POV.DDAY",
