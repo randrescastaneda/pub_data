@@ -25,8 +25,8 @@ wdi <- wbstats::wb_data(indicators,
 
 
 # Test it is workinf
-wdi2 <-
-  readr::read_rds("https://github.com/randrescastaneda/pub_data/raw/master/data/Rtest1/wdi_in1.Rds")
-
-
-waldo::compare(wdi, wdi2)
+# wdi2 <-
+#   readr::read_rds("https://github.com/randrescastaneda/pub_data/raw/test3/data/Rtest1/wdi_in1.Rds")
+#
+#
+# waldo::compare(wdi, wdi2)
