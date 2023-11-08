@@ -31,7 +31,7 @@ svy_sim <- function(size = 1e5, mean = 3, sd = 5, wlimit = 1e3) {
     factor(labels = c("urban", "rural"))
 
 
-  md <- data.table(welfare = welfare,
+  md <- data.table(income = welfare,
                    weight  = weight,
                    area    = area)
   return(md)
