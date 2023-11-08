@@ -29,11 +29,12 @@ plnew <- c("pov_intl", "pov_lmic", "pov_umic")
 setnames(pip, plvars, plnew)
 
 
-indicators <- c("lifeex" = "SP.DYN.LE00.IN",
-    "gini" = "SI.POV.GINI",
-    "gdp" = "NY.GDP.MKTP.PP.KD",
-    "pop" = "SP.POP.TOTL",
-    "pov_ofcl" = "1.0.HCount.Ofcl")
+indicators <- c(
+  "lifeex"   = "SP.DYN.LE00.IN",
+  "gini"     = "SI.POV.GINI",
+  "gdp"      = "NY.GDP.PCAP.PP.KD",
+  "pop"      = "SP.POP.TOTL",
+  "pov_ofcl" = "1.0.HCount.Ofcl")
 
 wdi <- wbstats::wb_data(indicators,
       start_date = start_date,
@@ -61,15 +62,13 @@ wdi <- wbstats::wb_data(indicators,
     pov_intl,
     pov_lmic,
     pov_umic
-  ) |>
-  ftransform(gdp = gdp/1e6)
+  )
 
 setrelabel(wdi,
            region   = "region",
            iso3c    = "ISO3 country code",
            date     = "year",
            country  = "country name",
-           gdp      = "GDP, PPP (2017 prices [in millions])",
            pov_intl = "Poverty headcount at $2.15 (2017 prices)",
            pov_lmic = "Poverty headcount at $3.65 (2017 prices)",
            pov_umic = "Poverty headcount at $6.85 (2017 prices)")
