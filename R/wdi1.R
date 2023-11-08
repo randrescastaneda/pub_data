@@ -61,8 +61,19 @@ wdi <- wbstats::wb_data(indicators,
     pov_intl,
     pov_lmic,
     pov_umic
-  )
+  ) |>
+  ftransform(gdp = gdp/1e6)
 
+setrelabel(wdi,
+           region   = "region",
+           iso3c    = "ISO3 country code",
+           date     = "year",
+           country  = "country name",
+           gdp      = "GDP, PPP (2017 prices [in millions])",
+           pov_intl = "Poverty headcount at $2.15 (2017 prices)",
+           pov_lmic = "Poverty headcount at $3.65 (2017 prices)",
+           pov_umic = "Poverty headcount at $6.85 (2017 prices)")
+namlab(wdi)
 
 "data/Rtest1" |>
  fs::dir_create(recurse = TRUE) |>
